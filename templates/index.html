@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease AI Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Liver Disease AI Predictor</h1>
+            <p>Advanced Machine Learning for Medical Diagnosis</p>
+        </header>
+        
+        <form method="POST" action="/predict" class="prediction-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age">Age (years)</label>
+                    <input type="number" id="age" name="age" required min="1" max="120" placeholder="35">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="total_bilirubin">Total Bilirubin (mg/dL)</label>
+                    <input type="number" step="0.01" id="total_bilirubin" name="total_bilirubin" required placeholder="1.0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="alkaline_phosphotase">Alkaline Phosphotase (U/L)</label>
+                    <input type="number" step="0.01" id="alkaline_phosphotase" name="alkaline_phosphotase" required placeholder="90">
+                </div>
+                
+                <div class="form-group">
+                    <label for="alamine_aminotransferase">ALT (U/L)</label>
+                    <input type="number" step="0.01" id="alamine_aminotransferase" name="alamine_aminotransferase" required placeholder="25">
+                </div>
+                
+                <div class="form-group">
+                    <label for="aspartate_aminotransferase">AST (U/L)</label>
+                    <input type="number" step="0.01" id="aspartate_aminotransferase" name="aspartate_aminotransferase" required placeholder="30">
+                </div>
+                
+                <div class="form-group">
+                    <label for="total_proteins">Total Proteins (g/dL)</label>
+                    <input type="number" step="0.01" id="total_proteins" name="total_proteins" required placeholder="7.0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="albumin">Albumin (g/dL)</label>
+                    <input type="number" step="0.01" id="albumin" name="albumin" required placeholder="4.0">
+                </div>
+            </div>
+            
+            <button type="submit" class="predict-btn">🔬 Analyze & Predict</button>
+        </form>
+        
+        <div class="nav-links">
+            <a href="/analytics" class="nav-btn">📊 View Analytics</a>
+            <a href="/model-info" class="nav-btn">🤖 Model Info</a>
+        </div>
+    </div>
+</body>
+</html>

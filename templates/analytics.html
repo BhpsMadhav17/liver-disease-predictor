@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Liver Disease AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Analytics Dashboard</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Predictions</h3>
+                <div class="stat-number">{{ stats.total_predictions }}</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Disease Cases Detected</h3>
+                <div class="stat-number disease">{{ stats.disease_cases }}</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Average Age</h3>
+                <div class="stat-number">{{ stats.avg_age }} years</div>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="/" class="nav-btn">🏠 Home</a>
+            <a href="/model-info" class="nav-btn">🤖 Model Info</a>
+        </div>
+    </div>
+</body>
+</html>

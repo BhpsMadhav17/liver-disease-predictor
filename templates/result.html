@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Liver Disease AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Prediction Result</h1>
+        
+        {% if error %}
+            <div class="result error">
+                <h2>❌ Error Occurred</h2>
+                <p>{{ error }}</p>
+            </div>
+        {% else %}
+            <div class="result {{ 'disease' if 'Disease Detected' in prediction else 'healthy' }}">
+                {% if 'Disease Detected' in prediction %}
+                    <h2>⚠️ {{ prediction }}</h2>
+                    <p class="confidence">AI Confidence: {{ confidence }}%</p>
+                    <p class="advice">Please consult a healthcare professional for proper diagnosis.</p>
+                {% else %}
+                    <h2>✅ {{ prediction }}</h2>
+                    <p class="confidence">AI Confidence: {{ confidence }}%</p>
+                    <p class="advice">Results look normal, but regular checkups are recommended.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+        
+        <div class="nav-links">
+            <a href="/" class="nav-btn">🔄 New Prediction</a>
+            <a href="/analytics" class="nav-btn">📊 Analytics</a>
+            <a href="/model-info" class="nav-btn">🤖 Model Info</a>
+        </div>
+    </div>
+</body>
+</html>

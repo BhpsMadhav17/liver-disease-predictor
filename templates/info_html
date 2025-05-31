@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Information - Liver Disease AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Model Information</h1>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Model Accuracy</h3>
+                <div class="info-value">{{ metrics.accuracy }}</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Algorithm</h3>
+                <div class="info-value">{{ metrics.algorithm }}</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Features Used</h3>
+                <div class="info-value">{{ metrics.features }}</div>
+            </div>
+            
+            <div class="info-card">
+                <h3>Training Samples</h3>
+                <div class="info-value">{{ metrics.samples_trained }}</div>
+            </div>
+        </div>
+        
+        <div class="features-list">
+            <h3>📋 Features Analyzed:</h3>
+            <ul>
+                <li>Age and Gender</li>
+                <li>Total Bilirubin levels</li>
+                <li>Alkaline Phosphotase levels</li>
+                <li>ALT (Alanine Aminotransferase)</li>
+                <li>AST (Aspartate Aminotransferase)</li>
+                <li>Total Proteins</li>
+                <li>Albumin levels</li>
+            </ul>
+        </div>
+        
+        <div class="nav-links">
+            <a href="/" class="nav-btn">🏠 Home</a>
+            <a href="/analytics" class="nav-btn">📊 Analytics</a>
+        </div>
+    </div>
+</body>
+</html>
